@@ -79,6 +79,8 @@ namespace Kdevaulo.GridPositionEditor
                         {
                             _selectedCells.Add(new Vector2Int(x, y));
                         }
+
+                        EditorUtility.SetDirty(target);
                     }
 
                     EditorGUI.DrawRect(GUILayoutUtility.GetLastRect(), cellColor);
@@ -89,8 +91,8 @@ namespace Kdevaulo.GridPositionEditor
 
             EditorGUILayout.EndScrollView();
 
-            EditorUtility.SetDirty(target);
-            serializedObject.ApplyModifiedProperties();
+            _positionsData.PointsXCount = _arrayWidth.intValue;
+            _positionsData.PointsYCount = _arrayHeight.intValue;
         }
 
         private void PrintCells()
