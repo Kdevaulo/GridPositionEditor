@@ -98,12 +98,13 @@ namespace Kdevaulo.GridPositionEditor
         private void PrintCells()
         {
             Debug.Log(nameof(PrintCells));
-            Debug.Log($"Selected cells count = {_positionsData.SelectedCells.Count}");
 
             foreach (Vector2Int cell in _positionsData.SelectedCells)
             {
                 Debug.Log("Selected cell at index: (" + cell.x + ", " + cell.y + ")");
             }
+
+            Debug.Log($"Selected cells count = {_positionsData.SelectedCells.Count}");
         }
 
         private void ClearCells()
